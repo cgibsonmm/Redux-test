@@ -1,5 +1,5 @@
 import { createStore, applyMiddleware, compose } from "redux";
-import { reduxImmutableStateInvariant as RXISI } from "redux-immutable-state-invariant";
+import reduxImmutableStateInvariant from "redux-immutable-state-invariant";
 import rootReducer from "./reducers";
 
 export default function configureStore(initialState) {
@@ -8,6 +8,6 @@ export default function configureStore(initialState) {
   return createStore(
     rootReducer,
     initialState,
-    composeEnhancers(applyMiddleware(RXISI()))
+    composeEnhancers(applyMiddleware(reduxImmutableStateInvariant()))
   );
 }
